@@ -56,6 +56,8 @@ if __name__ == '__main__':
 
     create(0,1,"|_O_|")
     create_board()
+    
+    print("balls")
 
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
