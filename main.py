@@ -7,6 +7,8 @@ Project: Tic-Tac-Toe
 """
 
 import random
+from tkinter import *
+import tkinter
 
 # This global variable, board, is the foundation of our program. It is a list of lists of strings. Since lists
 # are mutable, this makes it easy to actually "alter" the board.
@@ -30,8 +32,9 @@ def create_board():
 
 # Function used to determine which player is going to go first
 
+print("hello world")
 def player_turn():
-    player_first = random.randint(1,2)
+    player_first = random.randint(1, 2)
     if player_first == 1:
         print("The player will go first")
     else: # (If playerFirst == 2 is the only other option)
@@ -61,6 +64,35 @@ def create(x,y,test):
 
    board[x][y] = test
 
+def position_move(val):
+    if val == "topL":
+        print("Top Left")
+    elif val == "topM":
+        print("Top Middle")
+    elif val == "topR":
+        print("Top Right")
+    elif val == "middleL":
+        print("Middle Left")
+    elif val == "middleM":
+        print("Middle Middle")
+    elif val == "botL":
+        print("Bottom Left")
+    elif val == "botM":
+        print("Bottom Middle")
+    elif val == "botR":
+        print("Bottom Right")
+
+'''
+BOARD BUTTON BINDING CREATION: STARTING HERE
+'''
+root = Tk()
+root.configure(background="dark blue")
+gridRoot = Entry(root)
+
+topL = tkinter.Button(root, text="topL", command=lambda:position_move("topL"))
+topL.grid(row=0,column=0)
+
+
 
 # This clear variable will be used to "reset" the console and just get rid of any previous iteration.
 clear = "\n" * 100
@@ -81,6 +113,7 @@ if __name__ == '__main__':
     
     print("balls")
 
+    root.mainloop()
 
 """
 END OF PROGRAM
