@@ -63,8 +63,8 @@ def game_run():
 def create(x, y, test):
     # Calling the global board function since this is what we want to alter.
     global board
-
     board[x][y] = test
+
 
 def position_move(val):
     if val == "topL":
@@ -174,23 +174,14 @@ clear = "\n" * 100
 if __name__ == '__main__':
     create_board()
     print()
-    create(0, 0, "_X_")
-    create_board()
 
-    print()
+    print("balls")
 
-    create(0, 1, "|_O_|")
-    create_board()
+    root.mainloop()
 
 # idk this the start of the ai i dont know how you want to do it yahir
 def enemy_player():
-        create(0, 0, "_X_")
         create_board()
         root.mainloop()
 
-#intro of program?
-print("Hello user! You are starting as X.")
-player_turn()
-print("Enter where you want to place your piece by typing:")
-print(int(input("create(0, 0, 0), but replace the zero with "X")
 
