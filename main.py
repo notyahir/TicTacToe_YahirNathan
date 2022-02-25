@@ -236,9 +236,5 @@ if __name__ == '__main__':
     print("And Player 2, just click on a position to place your X on the tk, and the turns will continue switching")
     root.mainloop()
 
-# idk this the start of the ai i dont know how you want to do it yahir
-def enemy_player():
-        create_board()
-        root.mainloop()
 
 
