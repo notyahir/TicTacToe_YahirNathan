@@ -14,9 +14,12 @@ import tkinter
 # are mutable, this makes it easy to actually "alter" the board.
 global board
 board = [
-    ["___", "|___|", "___"],
-    ["___", "|___|", "___"],
-    ["   ", "|   |", "   "]
+    ["     ", "|     |", "     "], # 0 - Score
+    ["_____", "|_____|", "_____"], # 1
+    ["     ", "|     |", "     "], # 2 - Score
+    ["_____", "|_____|", "_____"], # 3
+    ["     ", "|     |", "     "], # 4 - Score
+    ["     ", "|     |", "     "]  # 5
 
 ]
 
@@ -66,21 +69,68 @@ def create(x,y,test):
 
 def position_move(val):
     if val == "topL":
-        print("Top Left")
+        print("Top Left Move!")
+        print()
+
+        create(0, 0, "  X  ")
+        create_board()
+        print()
     elif val == "topM":
-        print("Top Middle")
+        print("Top Middle Move!")
+        print()
+
+        create(0, 1, "|  O  |")
+        create_board()
+        print()
     elif val == "topR":
-        print("Top Right")
-    elif val == "middleL":
-        print("Middle Left")
-    elif val == "middleM":
-        print("Middle Middle")
+        print("Top Right Move!")
+        print()
+
+        create(0, 2, "  X  ")
+        create_board()
+        print()
+    elif val == "midL":
+        print("Middle Left Move!")
+        print()
+
+        create(2, 0, "  O  ")
+        create_board()
+        print()
+    elif val == "midM":
+        print("Middle Middle Move!")
+        print()
+
+        create(2, 1, "|  X  |")
+        create_board()
+        print()
+    elif val == "midR":
+        print("Middle Right Move!")
+        print()
+
+        create(2,2,"  O  ")
+        create_board()
+        print()
     elif val == "botL":
-        print("Bottom Left")
+        print("Bottom Left Move!")
+        print()
+
+        create(4,0,"  X  ")
+        create_board()
+        print()
     elif val == "botM":
-        print("Bottom Middle")
+        print("Bottom Middle Move!")
+        print()
+
+        create(4,1,"|  O  |")
+        create_board()
+        print()
     elif val == "botR":
-        print("Bottom Right")
+        print("Bottom Right Move!")
+        print()
+
+        create(4, 2, "  X  ")
+        create_board()
+        print()
 
 '''
 BOARD BUTTON BINDING CREATION: STARTING HERE
@@ -91,6 +141,37 @@ gridRoot = Entry(root)
 
 topL = tkinter.Button(root, text="topL", command=lambda:position_move("topL"))
 topL.grid(row=0,column=0)
+
+topM = tkinter.Button(root, text="topM", command=lambda:position_move("topM"))
+topM.grid(row=0,column=1)
+
+topR = tkinter.Button(root, text="topR", command=lambda:position_move("topR"))
+topR.grid(row=0,column=2)
+
+# middle creation buttons
+midL = tkinter.Button(root, text="midL", command=lambda:position_move("midL"))
+midL.grid(row=1,column=0)
+
+midM = tkinter.Button(root, text="midM", command=lambda:position_move("midM"))
+midM.grid(row=1,column=1)
+
+midR = tkinter.Button(root, text="midR", command=lambda:position_move("midR"))
+midR.grid(row=1,column=2)
+
+botL = tkinter.Button(root, text="botL", command=lambda:position_move("botL"))
+botL.grid(row=2,column=0)
+
+botM = tkinter.Button(root, text="botM", command=lambda:position_move("botM"))
+botM.grid(row=2,column=1)
+
+botR = tkinter.Button(root, text="botR", command=lambda:position_move("botR"))
+botR.grid(row=2,column=2)
+
+
+
+
+
+
 
 
 
@@ -103,14 +184,6 @@ if __name__ == '__main__':
     create_board()
     print()
 
-    create(0,0,"_X_")
-    create_board()
-
-    print()
-
-    create(0,1,"|_O_|")
-    create_board()
-    
     print("balls")
 
     root.mainloop()
