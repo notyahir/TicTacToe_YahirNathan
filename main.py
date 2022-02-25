@@ -5,7 +5,6 @@
 Name: Nathan and Yahir
 Project: Tic-Tac-Toe
 """
-
 import random
 from tkinter import *
 import tkinter
@@ -40,7 +39,7 @@ def player_turn():
     player_first = random.randint(1, 2)
     if player_first == 1:
         print("The player will go first")
-    else: # (If playerFirst == 2 is the only other option)
+    else:  # (If playerFirst == 2 is the only other option)
         print("The computer will go first")
     return player_first
 
@@ -61,11 +60,11 @@ def game_run():
 
 
 # This function modifies the tic-tac-toe board by allowing us to add the user buttons
-def create(x,y,test):
-   #Calling the global board function since this is what we want to alter.
-   global board
+def create(x, y, test):
+    # Calling the global board function since this is what we want to alter.
+    global board
 
-   board[x][y] = test
+    board[x][y] = test
 
 def position_move(val):
     if val == "topL":
@@ -167,27 +166,31 @@ botM.grid(row=2,column=1)
 botR = tkinter.Button(root, text="botR", command=lambda:position_move("botR"))
 botR.grid(row=2,column=2)
 
-
-
-
-
-
-
-
-
 # This clear variable will be used to "reset" the console and just get rid of any previous iteration.
 clear = "\n" * 100
 
-
 # Press the green button in the gutter to run the script.
+#Test down below
 if __name__ == '__main__':
     create_board()
     print()
+    create(0, 0, "_X_")
+    create_board()
 
-    print("balls")
+    print()
 
-    root.mainloop()
+    create(0, 1, "|_O_|")
+    create_board()
 
-"""
-END OF PROGRAM
-"""
+# idk this the start of the ai i dont know how you want to do it yahir
+def enemy_player():
+        create(0, 0, "_X_")
+        create_board()
+        root.mainloop()
+
+#intro of program?
+print("Hello user! You are starting as X.")
+player_turn()
+print("Enter where you want to place your piece by typing:")
+print(int(input("create(0, 0, 0), but replace the zero with "X")
+
