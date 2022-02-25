@@ -5,6 +5,9 @@
 Name: Nathan and Yahir
 Project: Tic-Tac-Toe
 """
+from itertools import *
+import intertools
+#imports intertools
 import random
 from tkinter import *
 import tkinter
@@ -34,7 +37,6 @@ def create_board():
 
 # Function used to determine which player is going to go first
 
-print("hello world")
 def player_turn():
     player_first = random.randint(1, 2)
     if player_first == 1:
@@ -65,77 +67,131 @@ def create(x, y, test):
     global board
     board[x][y] = test
 
+#switches between players code of X and O
+
+def turnply1():
+    myfunc = itertools.cycle([0,1]).next
 
 def position_move(val):
     if val == "topL":
         print("Top Left Move!")
         print()
-
-        create(0, 0, "  X  ")
-        create_board()
+        if turnply1() == 0
+            create(0, 0, "  X  ")
+            create_board()
+            print()
+        elif turnply1() == 1
+            create(0, 0, "  O  ")
+            create_board()
         print()
+
     elif val == "topM":
         print("Top Middle Move!")
         print()
+        if turnply1() == 0
+            create(0, 1, "|  X  |")
+            create_board()
+            print()
+        elif turnply1() == 1
+            create(0, 1, "|  O  |")
+            create_board()
+            print()
 
-        create(0, 1, "|  O  |")
-        create_board()
-        print()
     elif val == "topR":
         print("Top Right Move!")
         print()
+        if turnply1() == 0
+            create(0, 2, "  X  ")
+            create_board()
+            print()
+        elif turnply1() == 1
+            create(0, 2, "  O  ")
+            create_board()
+            print()
 
-        create(0, 2, "  X  ")
-        create_board()
-        print()
     elif val == "midL":
         print("Middle Left Move!")
         print()
 
-        create(2, 0, "  O  ")
-        create_board()
-        print()
+        if turnply1() == 0
+            create(2, 0, "  X  ")
+            create_board()
+            print()
+        elif turnply1() == 1
+            create(2, 0, "  O  ")
+            create_board()
+            print()
+
     elif val == "midM":
         print("Middle Middle Move!")
         print()
 
-        create(2, 1, "|  X  |")
-        create_board()
-        print()
+        if turnply1() == 0
+            create(2, 1, "|  X  |")
+            create_board()
+            print()
+        elif turnply1() == 1
+            create(2, 1, "|  O  |")
+            create_board()
+            print()
+
     elif val == "midR":
         print("Middle Right Move!")
         print()
 
-        create(2,2,"  O  ")
-        create_board()
-        print()
+        if turnply1() == 0
+            create(2, 2, "  X  ")
+            create_board()
+            print()
+        elif turnply1() == 1
+            create(2, 2, "  O  ")
+            create_board()
+            print()
+
     elif val == "botL":
         print("Bottom Left Move!")
         print()
+        if turnply1() == 0
+            create(4, 0, "  X  ")
+            create_board()
+            print()
+        elif turnply1() == 1
+            create(4, 0, "  O  ")
+            create_board()
+            print()
 
-        create(4,0,"  X  ")
-        create_board()
-        print()
     elif val == "botM":
         print("Bottom Middle Move!")
         print()
 
-        create(4,1,"|  O  |")
-        create_board()
-        print()
+        if turnply1() == 0
+            create(4, 1, "|  X  |")
+            create_board()
+            print()
+        elif turnply1() == 1
+            create(4, 1, "|  O  |")
+            create_board()
+            print()
+
     elif val == "botR":
         print("Bottom Right Move!")
         print()
 
-        create(4, 2, "  X  ")
-        create_board()
-        print()
+        if turnply1() == 0
+            create(4, 2, "  X  ")
+            create_board()
+            print()
+        elif turnply1() == 1
+            create(4, 2, "  O  ")
+            create_board()
+            print()
 
 '''
 BOARD BUTTON BINDING CREATION: STARTING HERE
 '''
+##
 root = Tk()
-root.configure(background="dark blue")
+root.configure(background="black")
 gridRoot = Entry(root)
 
 topL = tkinter.Button(root, text="topL", command=lambda:position_move("topL"))
@@ -170,13 +226,14 @@ botR.grid(row=2,column=2)
 clear = "\n" * 100
 
 # Press the green button in the gutter to run the script.
-#Test down below
+#Intro to project
 if __name__ == '__main__':
     create_board()
     print()
 
-    print("balls")
-
+    print("Welcome user! Player 1 will be O and Player 2 will be X.")
+    print("To start, Player 1 just click position to place your O on the tk.")
+    print("And Player 2, just click on a position to place your X on the tk, and the turns will continue switching")
     root.mainloop()
 
 # idk this the start of the ai i dont know how you want to do it yahir
