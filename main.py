@@ -34,6 +34,9 @@ def create_board():
     for i in range(len(board)):
         print("".join(board[i]))
 
+'''
+NOT SURE IF WE ARE USING THIS FUNCTION
+'''
 
 # Function used to determine which player is going to go first
 
@@ -67,8 +70,12 @@ def create(x, y, test):
     global board
     board[x][y] = test
 
-#switches between players code of X and O
 
+'''
+PLAYER MOVES CYCLING BETWEEN PLAYER X AND O
+'''
+
+#switches between players code of X and O
 def turnply1():
     myfunc = itertools.cycle([0,1]).next
 
@@ -76,11 +83,11 @@ def position_move(val):
     if val == "topL":
         print("Top Left Move!")
         print()
-        if turnply1() == 0
+        if turnply1() == 0:
             create(0, 0, "  X  ")
             create_board()
             print()
-        elif turnply1() == 1
+        elif turnply1() == 1:
             create(0, 0, "  O  ")
             create_board()
         print()
@@ -88,11 +95,11 @@ def position_move(val):
     elif val == "topM":
         print("Top Middle Move!")
         print()
-        if turnply1() == 0
+        if turnply1() == 0:
             create(0, 1, "|  X  |")
             create_board()
             print()
-        elif turnply1() == 1
+        elif turnply1() == 1:
             create(0, 1, "|  O  |")
             create_board()
             print()
@@ -100,11 +107,11 @@ def position_move(val):
     elif val == "topR":
         print("Top Right Move!")
         print()
-        if turnply1() == 0
+        if turnply1() == 0:
             create(0, 2, "  X  ")
             create_board()
             print()
-        elif turnply1() == 1
+        elif turnply1() == 1:
             create(0, 2, "  O  ")
             create_board()
             print()
@@ -113,11 +120,11 @@ def position_move(val):
         print("Middle Left Move!")
         print()
 
-        if turnply1() == 0
+        if turnply1() == 0:
             create(2, 0, "  X  ")
             create_board()
             print()
-        elif turnply1() == 1
+        elif turnply1() == 1:
             create(2, 0, "  O  ")
             create_board()
             print()
@@ -126,11 +133,11 @@ def position_move(val):
         print("Middle Middle Move!")
         print()
 
-        if turnply1() == 0
+        if turnply1() == 0:
             create(2, 1, "|  X  |")
             create_board()
             print()
-        elif turnply1() == 1
+        elif turnply1() == 1:
             create(2, 1, "|  O  |")
             create_board()
             print()
@@ -139,11 +146,11 @@ def position_move(val):
         print("Middle Right Move!")
         print()
 
-        if turnply1() == 0
+        if turnply1() == 0:
             create(2, 2, "  X  ")
             create_board()
             print()
-        elif turnply1() == 1
+        elif turnply1() == 1:
             create(2, 2, "  O  ")
             create_board()
             print()
@@ -151,11 +158,11 @@ def position_move(val):
     elif val == "botL":
         print("Bottom Left Move!")
         print()
-        if turnply1() == 0
+        if turnply1() == 0:
             create(4, 0, "  X  ")
             create_board()
             print()
-        elif turnply1() == 1
+        elif turnply1() == 1:
             create(4, 0, "  O  ")
             create_board()
             print()
@@ -164,11 +171,11 @@ def position_move(val):
         print("Bottom Middle Move!")
         print()
 
-        if turnply1() == 0
+        if turnply1() == 0:
             create(4, 1, "|  X  |")
             create_board()
             print()
-        elif turnply1() == 1
+        elif turnply1() == 1:
             create(4, 1, "|  O  |")
             create_board()
             print()
@@ -177,11 +184,11 @@ def position_move(val):
         print("Bottom Right Move!")
         print()
 
-        if turnply1() == 0
+        if turnply1() == 0:
             create(4, 2, "  X  ")
             create_board()
             print()
-        elif turnply1() == 1
+        elif turnply1() == 1:
             create(4, 2, "  O  ")
             create_board()
             print()
@@ -225,6 +232,11 @@ botR.grid(row=2,column=2)
 # This clear variable will be used to "reset" the console and just get rid of any previous iteration.
 clear = "\n" * 100
 
+'''
+PROJECT START
+'''
+
+
 # Press the green button in the gutter to run the script.
 #Intro to project
 if __name__ == '__main__':
@@ -236,5 +248,41 @@ if __name__ == '__main__':
     print("And Player 2, just click on a position to place your X on the tk, and the turns will continue switching")
     root.mainloop()
 
+'''
+PROJECT BREAK
+'''
+def check_win():
 
+    if board =
+        ["     ", "|     |", "     "], # 0 - Score
+        ["_____", "|_____|", "_____"], # 1
+        ["  X  ", "|  X  |", "  X  "], # 2 - Score
+        ["_____", "|_____|", "_____"], # 3
+        ["     ", "|     |", "     "], # 4 - Score
+        ["     ", "|     |", "     "]  # 5
+    ]
+        return "Player X won the game! Game Over!"
+        game_run = false
 
+    elif board =
+        ["     ", "|     |", "     "], # 0 - Score
+        ["_____", "|_____|", "_____"], # 1
+        ["  O  ", "|  O  |", "  O  "], # 2 - Score
+        ["_____", "|_____|", "_____"], # 3
+        ["     ", "|     |", "     "], # 4 - Score
+        ["     ", "|     |", "     "]  # 5
+    ]
+        return "Player O won the game! Game Over!"
+        game_run = false
+
+elif board =
+        ["     ", "|  O  |", "     "], # 0 - Score
+        ["_____", "|_____|", "_____"], # 1
+        ["     ", "|  O  |", "     "], # 2 - Score
+        ["_____", "|_____|", "_____"], # 3
+        ["     ", "|  O  |", "     "], # 4 - Score
+        ["     ", "|     |", "     "]  # 5
+    ]
+        return "Player O won the game! Game Over!"
+        game_run = false
+    #possible winning combinations in code
