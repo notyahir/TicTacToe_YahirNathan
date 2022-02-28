@@ -162,10 +162,16 @@ def position_move(val):
             create(4, 0, "  X  ")
             create_board()
             print()
+
+            var = turnply1() == BlX
+
         elif turnply1() == 1:
             create(4, 0, "  O  ")
             create_board()
             print()
+
+            var = turnply1() == BlO
+
 
     elif val == "botM":
         print("Bottom Middle Move!")
@@ -175,24 +181,35 @@ def position_move(val):
             create(4, 1, "|  X  |")
             create_board()
             print()
+
+            var = turnply1() == BmX
+
         elif turnply1() == 1:
             create(4, 1, "|  O  |")
             create_board()
             print()
 
+            var = turnply1() == BmO
+
+
     elif val == "botR":
         print("Bottom Right Move!")
         print()
+        
 
         if turnply1() == 0:
             create(4, 2, "  X  ")
             create_board()
             print()
+
+            var = turnply1() == BrX
+
         elif turnply1() == 1:
             create(4, 2, "  O  ")
             create_board()
             print()
 
+            var = turnply1() == BrO
 '''
 BOARD BUTTON BINDING CREATION: STARTING HERE
 '''
@@ -253,36 +270,45 @@ PROJECT BREAK
 '''
 def check_win():
 
-    if board =
-        ["     ", "|     |", "     "], # 0 - Score
-        ["_____", "|_____|", "_____"], # 1
-        ["  X  ", "|  X  |", "  X  "], # 2 - Score
-        ["_____", "|_____|", "_____"], # 3
-        ["     ", "|     |", "     "], # 4 - Score
-        ["     ", "|     |", "     "]  # 5
-    ]
-        return "Player X won the game! Game Over!"
-        game_run = false
-
-    elif board =
-        ["     ", "|     |", "     "], # 0 - Score
-        ["_____", "|_____|", "_____"], # 1
-        ["  O  ", "|  O  |", "  O  "], # 2 - Score
-        ["_____", "|_____|", "_____"], # 3
-        ["     ", "|     |", "     "], # 4 - Score
-        ["     ", "|     |", "     "]  # 5
-    ]
+    if BrO == BmO and BmO == Bl0:
+        break
         return "Player O won the game! Game Over!"
-        game_run = false
 
-elif board =
-        ["     ", "|  O  |", "     "], # 0 - Score
-        ["_____", "|_____|", "_____"], # 1
-        ["     ", "|  O  |", "     "], # 2 - Score
-        ["_____", "|_____|", "_____"], # 3
-        ["     ", "|  O  |", "     "], # 4 - Score
-        ["     ", "|     |", "     "]  # 5
-    ]
-        return "Player O won the game! Game Over!"
-        game_run = false
-    #possible winning combinations in code
+check_win()
+
+"""
+        not sure abt this part will see if it works later
+        if board =
+              ["     ", "|     |", "     "], # 0 - Score
+              ["_____", "|_____|", "_____"], # 1
+              ["  X  ", "|  X  |", "  X  "], # 2 - Score
+              ["_____", "|_____|", "_____"], # 3
+              ["     ", "|     |", "     "], # 4 - Score
+              ["     ", "|     |", "     "]  # 5
+          ]
+              return "Player X won the game! Game Over!"
+              game_run = false
+      
+          elif board =
+              ["     ", "|     |", "     "], # 0 - Score
+              ["_____", "|_____|", "_____"], # 1
+              ["  O  ", "|  O  |", "  O  "], # 2 - Score
+              ["_____", "|_____|", "_____"], # 3
+              ["     ", "|     |", "     "], # 4 - Score
+              ["     ", "|     |", "     "]  # 5
+          ]
+              return "Player O won the game! Game Over!"
+              game_run = false
+      
+      elif board =
+              ["     ", "|  O  |", "     "], # 0 - Score
+              ["_____", "|_____|", "_____"], # 1
+              ["     ", "|  O  |", "     "], # 2 - Score
+              ["_____", "|_____|", "_____"], # 3
+              ["     ", "|  O  |", "     "], # 4 - Score
+              ["     ", "|     |", "     "]  # 5
+          ]
+              return "Player O won the game! Game Over!"
+              game_run = false
+          #possible winning combinations in code
+"""
