@@ -1,12 +1,12 @@
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+#start of tic tac toe project
+
 
 """
 Name: Nathan and Yahir
 Project: Tic-Tac-Toe
 """
 from itertools import *
-import intertools
+import itertools
 #imports intertools
 import random
 from tkinter import *
@@ -63,7 +63,6 @@ def game_run():
         if player_turn() == 1:
             pass
 
-
 # This function modifies the tic-tac-toe board by allowing us to add the user buttons
 def create(x, y, test):
     # Calling the global board function since this is what we want to alter.
@@ -75,18 +74,24 @@ def create(x, y, test):
 PLAYER MOVES CYCLING BETWEEN PLAYER X AND O
 '''
 
-#switches between players code of X and O
+#switches between players code of X and O throughout the game
 def turnply1():
-    myfunc = itertools.cycle([0,1]).next
+    myIterator = cycle(range(2))
+    myIterator = 0
+
+
+
 
 def position_move(val):
     if val == "topL":
         print("Top Left Move!")
         print()
+
         if turnply1() == 0:
             create(0, 0, "  X  ")
             create_board()
             print()
+
         elif turnply1() == 1:
             create(0, 0, "  O  ")
             create_board()
@@ -95,10 +100,12 @@ def position_move(val):
     elif val == "topM":
         print("Top Middle Move!")
         print()
+
         if turnply1() == 0:
             create(0, 1, "|  X  |")
             create_board()
             print()
+
         elif turnply1() == 1:
             create(0, 1, "|  O  |")
             create_board()
@@ -107,10 +114,12 @@ def position_move(val):
     elif val == "topR":
         print("Top Right Move!")
         print()
+
         if turnply1() == 0:
             create(0, 2, "  X  ")
             create_board()
             print()
+
         elif turnply1() == 1:
             create(0, 2, "  O  ")
             create_board()
@@ -124,6 +133,7 @@ def position_move(val):
             create(2, 0, "  X  ")
             create_board()
             print()
+
         elif turnply1() == 1:
             create(2, 0, "  O  ")
             create_board()
@@ -137,6 +147,7 @@ def position_move(val):
             create(2, 1, "|  X  |")
             create_board()
             print()
+
         elif turnply1() == 1:
             create(2, 1, "|  O  |")
             create_board()
@@ -163,15 +174,10 @@ def position_move(val):
             create_board()
             print()
 
-            var = turnply1() == BlX
-
         elif turnply1() == 1:
             create(4, 0, "  O  ")
             create_board()
             print()
-
-            var = turnply1() == BlO
-
 
     elif val == "botM":
         print("Bottom Middle Move!")
@@ -182,34 +188,26 @@ def position_move(val):
             create_board()
             print()
 
-            var = turnply1() == BmX
-
         elif turnply1() == 1:
             create(4, 1, "|  O  |")
             create_board()
             print()
 
-            var = turnply1() == BmO
-
-
     elif val == "botR":
         print("Bottom Right Move!")
         print()
-        
 
         if turnply1() == 0:
             create(4, 2, "  X  ")
             create_board()
             print()
 
-            var = turnply1() == BrX
-
         elif turnply1() == 1:
             create(4, 2, "  O  ")
             create_board()
             print()
 
-            var = turnply1() == BrO
+
 '''
 BOARD BUTTON BINDING CREATION: STARTING HERE
 '''
@@ -253,7 +251,6 @@ clear = "\n" * 100
 PROJECT START
 '''
 
-
 # Press the green button in the gutter to run the script.
 #Intro to project
 if __name__ == '__main__':
@@ -262,21 +259,17 @@ if __name__ == '__main__':
 
     print("Welcome user! Player 1 will be O and Player 2 will be X.")
     print("To start, Player 1 just click position to place your O on the tk.")
-    print("And Player 2, just click on a position to place your X on the tk, and the turns will continue switching")
+    print("And Player 2, just click on a position to place your X on the tk.")
+    print("The game will continue switching sides UNTIL a clear winner is decided.")
+    print("Good Luck!")
     root.mainloop()
+
 
 '''
 PROJECT BREAK
-'''
-def check_win():
 
-    if BrO == BmO and BmO == Bl0:
-        break
-        return "Player O won the game! Game Over!"
-
-check_win()
-
-"""
+    def check_win():
+    check_win()
         not sure abt this part will see if it works later
         if board =
               ["     ", "|     |", "     "], # 0 - Score
@@ -311,4 +304,4 @@ check_win()
               return "Player O won the game! Game Over!"
               game_run = false
           #possible winning combinations in code
-"""
+'''
