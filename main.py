@@ -118,111 +118,144 @@ def position_move(val):
         print("Top Middle Move!")
         print()
 
-        if turnply1() == 0:
+        if turn == False:
             create(0, 1, "|  X  |")
             create_board()
             print()
+            turn = turnply1()
 
-        elif turnply1() == 1:
+
+        elif turn == True:
             create(0, 1, "|  O  |")
             create_board()
             print()
+            turn = turnply1()
+
 
     elif val == "topR":
         print("Top Right Move!")
         print()
 
-        if turnply1() == 0:
+        if turn == False:
             create(0, 2, "  X  ")
             create_board()
             print()
+            turn = turnply1()
 
-        elif turnply1() == 1:
+
+        elif turn == True:
             create(0, 2, "  O  ")
             create_board()
             print()
+            turn = turnply1()
+
 
     elif val == "midL":
         print("Middle Left Move!")
         print()
 
-        if turnply1() == 0:
+        if turn == False:
             create(2, 0, "  X  ")
             create_board()
             print()
+            turn = turnply1()
 
-        elif turnply1() == 1:
+
+        elif turn == True:
             create(2, 0, "  O  ")
             create_board()
             print()
+            turn = turnply1()
+
 
     elif val == "midM":
         print("Middle Middle Move!")
         print()
 
-        if turnply1() == 0:
+        if turn == False:
             create(2, 1, "|  X  |")
             create_board()
             print()
+            turn = turnply1()
 
-        elif turnply1() == 1:
+
+
+        elif turn == True:
             create(2, 1, "|  O  |")
             create_board()
             print()
+            turn = turnply1()
+
 
     elif val == "midR":
         print("Middle Right Move!")
         print()
 
-        if turnply1() == 0:
+        if turn == False:
             create(2, 2, "  X  ")
             create_board()
             print()
-        elif turnply1() == 1:
+            turn = turnply1()
+
+        elif turn == True:
             create(2, 2, "  O  ")
             create_board()
             print()
+            turn = turnply1()
+
 
     elif val == "botL":
         print("Bottom Left Move!")
         print()
-        if turnply1() == 0:
+        if turn == False:
             create(4, 0, "  X  ")
             create_board()
             print()
+            turn = turnply1()
 
-        elif turnply1() == 1:
+
+        elif turn == True:
             create(4, 0, "  O  ")
             create_board()
             print()
+            turn = turnply1()
+
 
     elif val == "botM":
         print("Bottom Middle Move!")
         print()
 
-        if turnply1() == 0:
+        if turn == False:
             create(4, 1, "|  X  |")
             create_board()
             print()
+            turn = turnply1()
 
-        elif turnply1() == 1:
+
+        elif turn == True:
             create(4, 1, "|  O  |")
             create_board()
             print()
+            turn = turnply1()
+
 
     elif val == "botR":
         print("Bottom Right Move!")
         print()
 
-        if turnply1() == 0:
+        if turn == False:
             create(4, 2, "  X  ")
             create_board()
             print()
+            turn = turnply1()
 
-        elif turnply1() == 1:
+
+        elif turn == True:
             create(4, 2, "  O  ")
             create_board()
             print()
+            turn = turnply1()
+
 
 
 '''
