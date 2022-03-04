@@ -34,18 +34,32 @@ def create_board():
     for i in range(len(board)):
         print("".join(board[i]))
 
+
 '''
 NOT SURE IF WE ARE USING THIS FUNCTION
 '''
 
 # Function used to determine which player is going to go first
-
+x=0
 def player_turn():
-    player_first = random.randint(1, 2)
-    if player_first == 1:
+    global x
+    player_first = random.choice([True, False])
+
+    if player_first and x==0:
         print("The player will go first")
-    else:  # (If playerFirst == 2 is the only other option)
+        x += 1
+        print()
+        print(player_first)
+
+    elif player_first == False and x==0:  # (If playerFirst == False is the only other option)
         print("The computer will go first")
+        x+=1
+
+
+        print()
+        print(player_first)
+
+    print()
     return player_first
 
 
@@ -64,6 +78,7 @@ def game_run():
             pass
 
 # This function modifies the tic-tac-toe board by allowing us to add the user buttons
+
 def create(x, y, test):
     # Calling the global board function since this is what we want to alter.
     global board
@@ -75,26 +90,28 @@ PLAYER MOVES CYCLING BETWEEN PLAYER X AND O
 '''
 
 #switches between players code of X and O throughout the game
+turn = player_turn()
+print(str(turn) + " INITIALIZATION")
+
 def turnply1():
-    myIterator = cycle(range(2))
-    myIterator = 0
-
-
+    global turn
+    return not turn
 
 
 def position_move(val):
+    global turn
     if val == "topL":
         print("Top Left Move!")
-        print()
-
-        if turnply1() == 0:
+        if turn == False:
             create(0, 0, "  X  ")
             create_board()
             print()
-
-        elif turnply1() == 1:
+            turn = turnply1()
+        elif turn == True:
             create(0, 0, "  O  ")
             create_board()
+            print()
+            turn = turnply1()
         print()
 
     elif val == "topM":
