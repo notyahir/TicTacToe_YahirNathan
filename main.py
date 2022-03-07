@@ -11,7 +11,18 @@ import itertools
 import random
 from tkinter import *
 import tkinter
+"""
 
+from ttkthemes import ttk
+from ttkthemes import themed_tk as tk
+ TRYING TO CHANGE HOW BOARD LOOKS
+ 
+
+root = tk.Themed()
+root.get_themes()
+root.set_theme("plastik")
+
+ """
 # This global variable, board, is the foundation of our program. It is a list of lists of strings. Since lists
 # are mutable, this makes it easy to actually "alter" the board.
 global board
@@ -30,7 +41,7 @@ board = [
 # of the list layout
 
 
-def create_board():
+def create_board() -> object:
     for i in range(len(board)):
         print("".join(board[i]))
 
@@ -262,9 +273,12 @@ def position_move(val):
 BOARD BUTTON BINDING CREATION: STARTING HERE
 '''
 ##
+
 root = Tk()
 root.configure(background="black")
 gridRoot = Entry(root)
+
+
 
 topL = tkinter.Button(root, text="topL", command=lambda:position_move("topL"))
 topL.grid(row=0,column=0)
