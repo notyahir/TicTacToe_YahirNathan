@@ -1,3 +1,5 @@
+#start of tic tac toe project
+
 
 """
 Name: Nathan and Yahir
@@ -7,9 +9,20 @@ from itertools import *
 import itertools
 #imports intertools
 import random
-import tkinter as tk
-from tkinter import ttk
+from tkinter import *
+import tkinter
+"""
 
+from ttkthemes import ttk
+from ttkthemes import themed_tk as tk
+ TRYING TO CHANGE HOW BOARD LOOKS
+ 
+
+root = tk.Themed()
+root.get_themes()
+root.set_theme("plastik")
+
+ """
 # This global variable, board, is the foundation of our program. It is a list of lists of strings. Since lists
 # are mutable, this makes it easy to actually "alter" the board.
 global board
@@ -307,62 +320,42 @@ def position_move(val):
 '''
 BOARD BUTTON BINDING CREATION: STARTING HERE
 '''
-class App(tk.Tk):
-    def __init__(self):
-        super().__init__()
+##
 
-        self.title('TIC-TAC-TOE BOARD')
-        self.geometry('400x400')
-        self.style = ttk.Style(self)
+root = Tk()
+root.configure(background="black")
+gridRoot = Entry(root)
 
-        # root window
-        self.title('TIC-TAC-TOE BOARD')
-        self.geometry('400x300')
-        self.style = ttk.Style(self)
+topL = tkinter.Button(root, text="topL", command=lambda:position_move("topL"))
+topL.grid(row=0,column=0)
 
-        """
-        class app will create an outline for an object i can manipulate and then
-        the def_init_(self) part will be a submodule that can help
-        """
+topM = tkinter.Button(root, text="topM", command=lambda:position_move("topM"))
+topM.grid(row=0,column=1)
 
-        root = Tk()
-        root.configure(background="black")
-        gridRoot = Entry(root)
+topR = tkinter.Button(root, text="topR", command=lambda:position_move("topR"))
+topR.grid(row=0,column=2)
 
-        topL = tkinter.Button(root, text="topL", command=lambda: position_move("topL"))
-        topL.grid(row=0, column=0)
+# middle creation buttons
+midL = tkinter.Button(root, text="midL", command=lambda:position_move("midL"))
+midL.grid(row=1,column=0)
 
-        topM = tkinter.Button(root, text="topM", command=lambda: position_move("topM"))
-        topM.grid(row=0, column=1)
+midM = tkinter.Button(root, text="midM", command=lambda:position_move("midM"))
+midM.grid(row=1,column=1)
 
-        topR = tkinter.Button(root, text="topR", command=lambda: position_move("topR"))
-        topR.grid(row=0, column=2)
+midR = tkinter.Button(root, text="midR", command=lambda:position_move("midR"))
+midR.grid(row=1,column=2)
 
-        # middle creation buttons
-        midL = tkinter.Button(root, text="midL", command=lambda: position_move("midL"))
-        midL.grid(row=1, column=0)
+botL = tkinter.Button(root, text="botL", command=lambda:position_move("botL"))
+botL.grid(row=2,column=0)
 
-        midM = tkinter.Button(root, text="midM", command=lambda: position_move("midM"))
-        midM.grid(row=1, column=1)
+botM = tkinter.Button(root, text="botM", command=lambda:position_move("botM"))
+botM.grid(row=2,column=1)
 
-        midR = tkinter.Button(root, text="midR", command=lambda: position_move("midR"))
-        midR.grid(row=1, column=2)
+botR = tkinter.Button(root, text="botR", command=lambda:position_move("botR"))
+botR.grid(row=2,column=2)
 
-        botL = tkinter.Button(root, text="botL", command=lambda: position_move("botL"))
-        botL.grid(row=2, column=0)
-
-        botM = tkinter.Button(root, text="botM", command=lambda: position_move("botM"))
-        botM.grid(row=2, column=1)
-
-        botR = tkinter.Button(root, text="botR", command=lambda: position_move("botR"))
-        botR.grid(row=2, column=2)
-
-        # This clear variable will be used to "reset" the console and just get rid of any previous iteration.
-        clear = "\n" * 100
-
-if __name__ == "__main__":
-    app = App()
-    app.mainloop()
+# This clear variable will be used to "reset" the console and just get rid of any previous iteration.
+clear = "\n" * 100
 
 '''
 PROJECT START
