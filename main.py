@@ -36,6 +36,15 @@ board = [
 
 ]
 
+moveX = "  X  "
+moveO = "  O  "
+
+moveX_middle = "|  X  |"
+moveO_middle = "|  O  |"
+
+list_of_marksX = [moveX, moveX_middle]
+list_of_marksO = [moveO, moveO_middle]
+
 
 # Function creating the board! Prints each list of strings and we use the join function to get rid
 # of the list layout
@@ -95,6 +104,47 @@ def create(x, y, test):
     global board
     board[x][y] = test
 
+def determineWinner():
+    global board, list_of_marks
+    print(board[0][0] in list_of_marks)
+    if (board[0][0] in list_of_marksX) and (board[0][1] in list_of_marksX) and (board[0][2] in list_of_marksX):
+        print("You won!")
+    elif (board[2][0] in list_of_marksX) and (board[2][1] in list_of_marksX) and (board[2][2] in list_of_marksX):
+        print("You won!")
+    elif (board[4][0] in list_of_marksX) and (board[4][1] in list_of_marksX) and (board[4][2] in list_of_marksX):
+        print("You won!")
+    elif (board[0][0] in list_of_marksX) and (board[2][0] in list_of_marksX) and (board[4][0] in list_of_marksX):
+        print("You won!")
+    elif (board[0][1] in list_of_marksX) and (board[2][1] in list_of_marksX) and (board[4][1] in list_of_marksX):
+        print("You won!")
+    elif (board[0][2] in list_of_marksX) and (board[2][2] in list_of_marksX) and (board[4][2] in list_of_marksX):
+        print("You won!")
+    elif (board[0][0] in list_of_marksX) and (board[2][1] in list_of_marksX) and (board[4][2] in list_of_marksX):
+        print("You won!")
+    elif (board[0][2] in list_of_marksX) and (board[2][1] in list_of_marksX) and (board[4][0] in list_of_marksX):
+        print("You won!")
+
+
+    elif (board[0][0] in list_of_marksO) and (board[0][1] in list_of_marksO) and (board[0][2] in list_of_marksO):
+        print("You won!")
+    elif (board[2][0] in list_of_marksO) and (board[2][1] in list_of_marksO) and (board[2][2] in list_of_marksO):
+        print("You won!")
+    elif (board[4][0] in list_of_marksO) and (board[4][1] in list_of_marksO) and (board[4][2] in list_of_marksO):
+        print("You won!")
+    elif (board[0][0] in list_of_marksO) and (board[2][0] in list_of_marksO) and (board[4][0] in list_of_marksO):
+        print("You won!")
+    elif (board[0][1] in list_of_marksO) and (board[2][1] in list_of_marksO) and (board[4][1] in list_of_marksO):
+        print("You won!")
+    elif (board[0][2] in list_of_marksO) and (board[2][2] in list_of_marksO) and (board[4][2] in list_of_marksO):
+        print("You won!")
+    elif (board[0][0] in list_of_marksO) and (board[2][1] in list_of_marksO) and (board[4][2] in list_of_marksO):
+        print("You won!")
+    elif (board[0][2] in list_of_marksO) and (board[2][1] in list_of_marksO) and (board[4][0] in list_of_marksO):
+        print("You won!")
+
+
+
+
 
 '''
 PLAYER MOVES CYCLING BETWEEN PLAYER X AND O
@@ -124,6 +174,7 @@ def position_move(val):
             print()
             turn = turnply1()
         print()
+        determineWinner()
 
     elif val == "topM":
         print("Top Middle Move!")
