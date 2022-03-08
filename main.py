@@ -278,8 +278,6 @@ root = Tk()
 root.configure(background="black")
 gridRoot = Entry(root)
 
-
-
 topL = tkinter.Button(root, text="topL", command=lambda:position_move("topL"))
 topL.grid(row=0,column=0)
 
