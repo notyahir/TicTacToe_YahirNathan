@@ -1,16 +1,14 @@
 #start of tic tac toe project
 
-
 """
 Name: Nathan and Yahir
 Project: Tic-Tac-Toe
 """
-from itertools import *
-import itertools
-#imports intertools
-import random
+
 from tkinter import *
+import random
 import tkinter
+
 """
 
 from ttkthemes import ttk
@@ -22,7 +20,8 @@ root = tk.Themed()
 root.get_themes()
 root.set_theme("plastik")
 
- """
+"""
+
 # This global variable, board, is the foundation of our program. It is a list of lists of strings. Since lists
 # are mutable, this makes it easy to actually "alter" the board.
 global board
@@ -36,9 +35,9 @@ board = [
 
 ]
 
+# These variables are used to check whether the board will have these marks on the board. Used for win condition
 moveX = "  X  "
 moveO = "  O  "
-
 moveX_middle = "|  X  |"
 moveO_middle = "|  O  |"
 
@@ -66,20 +65,30 @@ def player_turn():
     player_first = random.choice([True, False])
 
     if player_first and x==0:
-        print("The player will go first")
+        print("Welcome user! Player 1 will be O and Player 2 will be X.")
+        print("To start, Player 1 just click position to place your O on the tk.")
+        print("And Player 2, just click on a position to place your X on the tk.")
+        print("The game will continue switching sides UNTIL a clear winner is decided.")
+
+        print()
+
+        print("Good Luck!")
+        print("Player 1 will go first")
         x += 1
         print()
-        print(player_first)
 
     elif player_first == False and x==0:  # (If playerFirst == False is the only other option)
-        print("The computer will go first")
-        x+=1
-
+        print("Welcome user! Player 1 will be O and Player 2 will be X.")
+        print("To start, Player 1 just click position to place your O on the tk.")
+        print("And Player 2, just click on a position to place your X on the tk.")
+        print("The game will continue switching sides UNTIL a clear winner is decided.")
 
         print()
-        print(player_first)
 
-    print()
+        print("Good Luck!")
+        print("Player 2 will go first")
+        x+=1
+        print()
     return player_first
 
 
@@ -151,11 +160,10 @@ PLAYER MOVES CYCLING BETWEEN PLAYER X AND O
 
 #switches between players code of X and O throughout the game
 turn = player_turn()
-print(str(turn) + " INITIALIZATION")
 
-def turnply1():
+def turnply1(bool):
     global turn
-    return not turn
+    return not bool
 
 
 def position_move(val):
@@ -184,8 +192,6 @@ def position_move(val):
             create_board()
             print()
             turn = turnply1()
-
-
         elif turn == True:
             create(0, 1, "|  O  |")
             create_board()
@@ -197,14 +203,12 @@ def position_move(val):
         print("Top Right Move!")
         print()
 
-        if turn == False:
+        if not turn:
             create(0, 2, "  X  ")
             create_board()
             print()
             turn = turnply1()
-
-
-        elif turn == True:
+        elif turn:
             create(0, 2, "  O  ")
             create_board()
             print()
@@ -368,13 +372,6 @@ PROJECT START
 #Intro to project
 if __name__ == '__main__':
     create_board()
-    print()
-
-    print("Welcome user! Player 1 will be O and Player 2 will be X.")
-    print("To start, Player 1 just click position to place your O on the tk.")
-    print("And Player 2, just click on a position to place your X on the tk.")
-    print("The game will continue switching sides UNTIL a clear winner is decided.")
-    print("Good Luck!")
     root.mainloop()
 
 
