@@ -161,9 +161,9 @@ PLAYER MOVES CYCLING BETWEEN PLAYER X AND O
 #switches between players code of X and O throughout the game
 turn = player_turn()
 
-def turnply1(bool):
+def turnply1():
     global turn
-    return not bool
+    return not turn
 
 
 def position_move(val):
