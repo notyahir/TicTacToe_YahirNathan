@@ -50,6 +50,9 @@ list_of_marksO = [moveO, moveO_middle]
 # of the list layout
 
 
+def create_board() -> object:
+    for i in range(len(board)):
+        print("".join(board[i]))
 
 
 '''
