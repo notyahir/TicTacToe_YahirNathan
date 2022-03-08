@@ -105,8 +105,7 @@ def create(x, y, test):
     board[x][y] = test
 
 def determineWinner():
-    global board, list_of_marks
-    print(board[0][0] in list_of_marks)
+    global board, list_of_marksO, list_of_marksX
     if (board[0][0] in list_of_marksX) and (board[0][1] in list_of_marksX) and (board[0][2] in list_of_marksX):
         print("You won!")
     elif (board[2][0] in list_of_marksX) and (board[2][1] in list_of_marksX) and (board[2][2] in list_of_marksX):
@@ -192,7 +191,7 @@ def position_move(val):
             create_board()
             print()
             turn = turnply1()
-
+        determineWinner()
 
     elif val == "topR":
         print("Top Right Move!")
@@ -210,7 +209,7 @@ def position_move(val):
             create_board()
             print()
             turn = turnply1()
-
+        determineWinner()
 
     elif val == "midL":
         print("Middle Left Move!")
@@ -228,7 +227,7 @@ def position_move(val):
             create_board()
             print()
             turn = turnply1()
-
+        determineWinner()
 
     elif val == "midM":
         print("Middle Middle Move!")
@@ -247,7 +246,7 @@ def position_move(val):
             create_board()
             print()
             turn = turnply1()
-
+        determineWinner()
 
     elif val == "midR":
         print("Middle Right Move!")
@@ -264,7 +263,7 @@ def position_move(val):
             create_board()
             print()
             turn = turnply1()
-
+        determineWinner()
 
     elif val == "botL":
         print("Bottom Left Move!")
@@ -281,6 +280,7 @@ def position_move(val):
             create_board()
             print()
             turn = turnply1()
+        determineWinner()
 
 
     elif val == "botM":
@@ -299,7 +299,7 @@ def position_move(val):
             create_board()
             print()
             turn = turnply1()
-
+        determineWinner()
 
     elif val == "botR":
         print("Bottom Right Move!")
@@ -317,7 +317,7 @@ def position_move(val):
             create_board()
             print()
             turn = turnply1()
-
+        determineWinner()
 
 
 '''
