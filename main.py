@@ -1,4 +1,3 @@
-#start of tic tac toe project
 
 """
 Name: Nathan and Yahir
@@ -10,16 +9,7 @@ import random
 import tkinter
 
 """
-
-from ttkthemes import ttk
-from ttkthemes import themed_tk as tk
- TRYING TO CHANGE HOW BOARD LOOKS
- 
-
-root = tk.Themed()
-root.get_themes()
-root.set_theme("plastik")
-
+BOARD BASE
 """
 
 # This global variable, board, is the foundation of our program. It is a list of lists of strings. Since lists
@@ -53,12 +43,10 @@ def create_board() -> object:
     for i in range(len(board)):
         print("".join(board[i]))
 
+"""
+START OF GAME AND WIN CONDITIONS OF X AND O
+"""
 
-'''
-NOT SURE IF WE ARE USING THIS FUNCTION
-'''
-
-# Function used to determine which player is going to go first
 x=0
 def player_turn():
     global x
@@ -73,7 +61,7 @@ def player_turn():
         print()
 
         print("Good Luck!")
-        print("Player 1 will go first")
+        print("Player 1 (O) will go first")
         x += 1
         print()
 
@@ -86,7 +74,7 @@ def player_turn():
         print()
 
         print("Good Luck!")
-        print("Player 2 will go first")
+        print("Player 2 (X) will go first")
         x+=1
         print()
     return player_first
@@ -116,46 +104,43 @@ def create(x, y, test):
 def determineWinner():
     global board, list_of_marksO, list_of_marksX
     if (board[0][0] in list_of_marksX) and (board[0][1] in list_of_marksX) and (board[0][2] in list_of_marksX):
-        print("You won!")
+        print("PLAYER X WON! GAMEOVER!")
     elif (board[2][0] in list_of_marksX) and (board[2][1] in list_of_marksX) and (board[2][2] in list_of_marksX):
-        print("You won!")
+        print("PLAYER X WON! GAMEOVER!")
     elif (board[4][0] in list_of_marksX) and (board[4][1] in list_of_marksX) and (board[4][2] in list_of_marksX):
-        print("You won!")
+        print("PLAYER X WON! GAMEOVER!")
     elif (board[0][0] in list_of_marksX) and (board[2][0] in list_of_marksX) and (board[4][0] in list_of_marksX):
-        print("You won!")
+        print("PLAYER X WON! GAMEOVER!")
     elif (board[0][1] in list_of_marksX) and (board[2][1] in list_of_marksX) and (board[4][1] in list_of_marksX):
-        print("You won!")
+        print("PLAYER X WON! GAMEOVER!")
     elif (board[0][2] in list_of_marksX) and (board[2][2] in list_of_marksX) and (board[4][2] in list_of_marksX):
-        print("You won!")
+        print("PLAYER X WON! GAMEOVER!")
     elif (board[0][0] in list_of_marksX) and (board[2][1] in list_of_marksX) and (board[4][2] in list_of_marksX):
-        print("You won!")
+        print("PLAYER X WON! GAMEOVER!")
     elif (board[0][2] in list_of_marksX) and (board[2][1] in list_of_marksX) and (board[4][0] in list_of_marksX):
-        print("You won!")
+        print("PLAYER X WON! GAMEOVER!")
 
 
     elif (board[0][0] in list_of_marksO) and (board[0][1] in list_of_marksO) and (board[0][2] in list_of_marksO):
-        print("You won!")
+        print("PLAYER O WON! GAMEOVER!")
     elif (board[2][0] in list_of_marksO) and (board[2][1] in list_of_marksO) and (board[2][2] in list_of_marksO):
-        print("You won!")
+        print("PLAYER O WON! GAMEOVER!")
     elif (board[4][0] in list_of_marksO) and (board[4][1] in list_of_marksO) and (board[4][2] in list_of_marksO):
-        print("You won!")
+        print("PLAYER O WON! GAMEOVER!")
     elif (board[0][0] in list_of_marksO) and (board[2][0] in list_of_marksO) and (board[4][0] in list_of_marksO):
-        print("You won!")
+        print("PLAYER O WON! GAMEOVER!")
     elif (board[0][1] in list_of_marksO) and (board[2][1] in list_of_marksO) and (board[4][1] in list_of_marksO):
-        print("You won!")
+        print("PLAYER O WON! GAMEOVER!")
     elif (board[0][2] in list_of_marksO) and (board[2][2] in list_of_marksO) and (board[4][2] in list_of_marksO):
-        print("You won!")
+        print("PLAYER O WON! GAMEOVER!")
     elif (board[0][0] in list_of_marksO) and (board[2][1] in list_of_marksO) and (board[4][2] in list_of_marksO):
-        print("You won!")
+        print("PLAYER O WON! GAMEOVER!")
     elif (board[0][2] in list_of_marksO) and (board[2][1] in list_of_marksO) and (board[4][0] in list_of_marksO):
-        print("You won!")
-
-
-
+        print("PLAYER O WON! GAMEOVER!")
 
 
 '''
-PLAYER MOVES CYCLING BETWEEN PLAYER X AND O
+PLAYER MOVES CYCLES, POSITIONS OF X AND O ON BOARD
 '''
 
 #switches between players code of X and O throughout the game
@@ -327,7 +312,6 @@ def position_move(val):
 '''
 BOARD BUTTON BINDING CREATION: STARTING HERE
 '''
-##
 
 root = Tk()
 root.configure(background="black")
@@ -375,51 +359,9 @@ if __name__ == '__main__':
     root.mainloop()
 
 
-'''
-PROJECT BREAK
-
-    def check_win():
-    check_win()
-        not sure abt this part will see if it works later
-        if board =
-              ["     ", "|     |", "     "], # 0 - Score
-              ["_____", "|_____|", "_____"], # 1
-              ["  X  ", "|  X  |", "  X  "], # 2 - Score
-              ["_____", "|_____|", "_____"], # 3
-              ["     ", "|     |", "     "], # 4 - Score
-              ["     ", "|     |", "     "]  # 5
-          ]
-              return "Player X won the game! Game Over!"
-              game_run = false
-      
-          elif board =
-              ["     ", "|     |", "     "], # 0 - Score
-              ["_____", "|_____|", "_____"], # 1
-              ["  O  ", "|  O  |", "  O  "], # 2 - Score
-              ["_____", "|_____|", "_____"], # 3
-              ["     ", "|     |", "     "], # 4 - Score
-              ["     ", "|     |", "     "]  # 5
-          ]
-              return "Player O won the game! Game Over!"
-              game_run = false
-      
-      elif board =
-              ["     ", "|  O  |", "     "], # 0 - Score
-              ["_____", "|_____|", "_____"], # 1
-              ["     ", "|  O  |", "     "], # 2 - Score
-              ["_____", "|_____|", "_____"], # 3
-              ["     ", "|  O  |", "     "], # 4 - Score
-              ["     ", "|     |", "     "]  # 5
-          ]
-              return "Player O won the game! Game Over!"
-              game_run = false
-          #possible winning combinations in code
-'''
-
-
-
 """
 
-YAHIR FINISHED HIS DEVELOPMENT THIS PROJECT ON March 8, 2022
+YAHIR FINISHED HIS DEVELOPMENT ON THIS PROJECT ON March 8, 2022
+NATHAN FINISHED HIS DEVELOPMENT ON THIS PROJECT ON March 10, 2022
 
 """
